@@ -1,6 +1,6 @@
 package src;
 
-public class Audio {
+public class Audio extends Multimediale {
     private String titolo;
     private int volume;
     private int durata;
@@ -12,8 +12,31 @@ public class Audio {
     }
 
     public void play() {
-        for (int i = 0; i< durata ; i++) {
-        System.out.println("Titolo: " + titolo + " Durata: " + durata + " Volume: " + "!".repeat(volume) );
+
+        System.out.println("Titolo: " + titolo + " Volume: " + "!".repeat(volume) );
+
+    }
+
+    public void abbassaVolume() {
+        if (volume == 0) {
+            System.out.println("Volume al Minimo");
+        } else {
+            volume--;
+            System.out.println("Volume al " + volume);
         }
+
+    }
+    public void alzaVolume() {
+        if (volume == 5) {
+            System.out.println("Volume al Massimo");
+        } else {
+            volume++;
+            System.out.println("Volume al " + volume);
+        }
+
+    }
+    @Override
+    public void getInfo() {
+        System.out.println("Audio Name: " +titolo);
     }
 }
